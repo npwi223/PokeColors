@@ -2,8 +2,9 @@ library(colordistance)
 library(ggplot2)
 library(stringr)
 
+# Download the file: fl-001n.zip and unzip it
 # Set your working directory to where the png images are located (remove comment below this)
-# setwd("User/file/path/here")
+# setwd("User/file/path/here/Downloads/fl-001n")
 # Identify the number of the pokemon based on the filename of the png
 
 poke_colors <- function(NPD_Number, ncolors) {
