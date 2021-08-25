@@ -45,4 +45,4 @@ ggplot(iris, aes(x = Petal.Length,
         axis.title = element_blank()) +
   scale_color_manual(values = poke_colors("150", 3)) # Choose the number of the pokemon you want your color palette based on (in quotes)
                                                      # Choose the number of colors you need (not in quotes)
-                                                  # Your color palette is updated in scale_color_manual
+                                                     # Your color palette is updated in scale_color_manual
