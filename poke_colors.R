@@ -2,11 +2,12 @@ library(colordistance)
 library(ggplot2)
 library(stringr)
 
+# Set your working directory to where the png images are located
+# Identify the number of the pokemon based on the filename of the png
 # Find K-means clusters
-
-
-kmeans.clusters <- colordistance::getKMeanColors("150.png"
-, n = 3, plotting = FALSE)
+kmeans.clusters <- colordistance::getKMeanColors("150.png", # Change the file name here to adjust which pokemon you are using for your color palette
+                                                 n = 3,     # Change the number of colors you need in your color palette here
+                                                 plotting = FALSE)
 color_clusters <- colordistance::extractClusters(kmeans.clusters)
 clusters <- color_clusters
 hex <- function(clusters){
@@ -24,6 +25,7 @@ hex <- function(clusters){
 } 
 hex(color_clusters)
 
+              # Example plot of Iris with Mewtwo colors
 ggplot(iris, aes(x = Petal.Length, 
                  y = Petal.Width, 
                  size = Petal.Length*Petal.Width, 
@@ -33,4 +35,4 @@ ggplot(iris, aes(x = Petal.Length,
   theme(legend.position = "none",
         axis.text = element_blank(),
         axis.title = element_blank()) +
-  scale_color_manual(values = hex(color_clusters))
+  scale_color_manual(values = hex(color_clusters)) # Your color palette is updated in scale_color_manual
