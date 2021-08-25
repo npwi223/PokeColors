@@ -5,13 +5,13 @@ library(stringr)
 # Set your working directory to where the png images are located (remove comment below this)
 # setwd("User/file/path/here")
 # Identify the number of the pokemon based on the filename of the png
-# Find K-means clusters
 
 poke_colors <- function(NPD_Number, ncolors) {
 
 NPD_Number <- ifelse(NPD_Number %>% str_length() == 1, paste0(0, 0, NPD_Number), NPD_Number)
 NPD_Number <- ifelse(NPD_Number %>% str_length() == 2, paste0(0, NPD_Number), NPD_Number)
 
+# Find K-means clusters
 kmeans.clusters <- colordistance::getKMeanColors(paste0(NPD_Number,".png"),
                                                  n = ncolors,     
                                                  plotting = FALSE)
